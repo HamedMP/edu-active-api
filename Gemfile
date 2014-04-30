@@ -7,3 +7,7 @@ gem 'pg'
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.2'
 end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
+end
