@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
   default_scope { order(:order) }
+  scope :root, -> { where(parent: nil) }
 
   has_many :children, class_name: 'Category',
                       foreign_key: 'category_id'
