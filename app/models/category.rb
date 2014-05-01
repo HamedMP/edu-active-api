@@ -4,4 +4,7 @@ class Category < ActiveRecord::Base
 
   belongs_to :parent, class_name: 'Category',
                       foreign_key: 'category_id'
+
+  validates :title, presence: true
+  validates :slug, presence: true, uniqueness: true
 end
