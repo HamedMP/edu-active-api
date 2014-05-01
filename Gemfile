@@ -6,6 +6,8 @@ gem 'rails-api'
 gem 'active_model_serializers'
 gem 'pg'
 gem 'puma'
+gem 'dalli'
+gem 'connection_pool'
 
 group :production do
   gem 'rails_12factor'
