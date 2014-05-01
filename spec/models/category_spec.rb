@@ -19,4 +19,14 @@ describe Category do
       expect(child1.parent).to eql parent
     end
   end
+
+  describe 'default scope' do
+    let!(:cat1) { create :category, order: 2 }
+    let!(:cat2) { create :category, order: 3 }
+    let!(:cat3) { create :category, order: 1 }
+
+    it 'sorts by order' do
+      expect(Category.all).to eq [cat3, cat1, cat2]
+    end
+  end
 end
